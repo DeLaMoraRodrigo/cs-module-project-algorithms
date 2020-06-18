@@ -5,10 +5,34 @@ from collections import namedtuple
 
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
+# Example Knapsack
+# {'Value': 197, 'Chosen': [1, 7, 8]}
+
 def knapsack_solver(items, capacity):
     # Your code here
+    returnBag = {
+      'Value': 0
+      'Chosen': []
+    }
 
-    pass
+    item_weights = [i[1] for i in items]
+    item_values = [i[2] for i in items]
+
+    n = len(item_weights)
+    W = capacity
+    bag = [[0 for w in range(W + 1)] for i in range(n)]
+
+    for i in range(1, n):
+      for w in range(1, W + 1):
+        wi = item_weights[i]
+        vi = item_values[i]
+
+        if wi <= w:
+          bag[i][w] = max([bag[i - 1][w -wi] + vi, bag[i - 1][w]])
+        else:
+          bag[i][w] = bag[i - 1][w]
+    
+    print(bag)
 
 
 if __name__ == '__main__':
