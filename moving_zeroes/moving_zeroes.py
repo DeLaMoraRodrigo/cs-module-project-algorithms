@@ -3,7 +3,6 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def moving_zeroes(arr):
-    # Your code here
     for i in range(len(arr)):
         if arr[i] == 0:
             arr.remove(0)

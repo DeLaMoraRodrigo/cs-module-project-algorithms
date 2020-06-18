@@ -4,7 +4,6 @@ Input: a List of integers as well as an integer `k` representing the size of the
 Returns: a List of integers
 '''
 # def sliding_window_max(nums, k):
-#     # Your code here
 #     if len(nums) == 0:
 #         return []
 #     max_arr = []
@@ -15,7 +14,6 @@ Returns: a List of integers
 #     return max_arr
 
 def sliding_window_max(nums, k):
-    # Your code here
     n = len(nums)
     Qi = deque()
     max_arr = []

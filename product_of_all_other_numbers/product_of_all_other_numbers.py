@@ -4,7 +4,6 @@ Input: a List of integers
 Returns: a List of integers
 '''
 # def product_of_all_other_numbers(arr):
-#     # Your code here
 #     new_array = []
 #     for i in range(len(arr)):
 #         if i == 0:
