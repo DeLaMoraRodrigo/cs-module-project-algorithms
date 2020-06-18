@@ -3,17 +3,31 @@ import numpy
 Input: a List of integers
 Returns: a List of integers
 '''
+# def product_of_all_other_numbers(arr):
+#     # Your code here
+#     new_array = []
+#     for i in range(len(arr)):
+#         if i == 0:
+#             prod = numpy.prod(arr[i + 1:])
+#             new_array.append(int(prod))
+#         else:
+#             product = numpy.prod(arr[:i]) * numpy.prod(arr[i + 1:])
+#             new_array.append(int(product))
+#     return new_array
+
+# Product that doesnt use numpy
 def product_of_all_other_numbers(arr):
-    # Your code here
-    new_array = []
+    new_arr = []
     for i in range(len(arr)):
-        if i == 0:
-            prod = numpy.prod(arr[i + 1:])
-            new_array.append(int(prod))
-        else:
-            product = numpy.prod(arr[:i]) * numpy.prod(arr[i + 1:])
-            new_array.append(int(product))
-    return new_array
+        copy_arr = arr.copy()
+        copy_arr[i] = 1
+        total = 1
+        for num in copy_arr:
+            total = total * num
+        
+        new_arr.append(total)
+    
+    return new_arr
 
 
 if __name__ == '__main__':
